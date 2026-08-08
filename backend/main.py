@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from backend.routes.study_plan import router as study_plan_router
 from backend.routes.upload import router as upload_router
 from backend.routes.job_description import router as jd_router
 from backend.routes.analyze import router as analyze_router
+from backend.routes.document import router as document_router
+from backend.routes.retrieve import router as retrieve_router
 
 app = FastAPI(title="AI Resume Screener")
 
@@ -22,7 +24,9 @@ app.add_middleware(
 app.include_router(upload_router)
 app.include_router(jd_router)
 app.include_router(analyze_router)
-
+app.include_router(document_router)
+app.include_router(retrieve_router)
+app.include_router(study_plan_router)
 
 @app.get("/")
 def home():
