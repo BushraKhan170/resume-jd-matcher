@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Uploaded resumes
+backend/uploads/
+
+# Python cache
+__pycache__/
+*.pyc
